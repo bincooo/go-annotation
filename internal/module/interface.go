@@ -6,6 +6,8 @@ import (
 	"github.com/bincooo/go-annotation/internal/logger"
 	"path/filepath"
 	"strings"
+
+	. "github.com/bincooo/go-annotation/internal/utils/stream"
 )
 
 type Module interface {
