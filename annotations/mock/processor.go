@@ -9,7 +9,7 @@ import (
 
 	"github.com/maxbrunsfeld/counterfeiter/v6/generator"
 
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	annotation "github.com/bincooo/go-annotation/pkg"
 )
 
 func init() {

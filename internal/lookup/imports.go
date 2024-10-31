@@ -5,11 +5,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	ast2 "github.com/YReshetko/go-annotation/internal/ast"
-	"github.com/YReshetko/go-annotation/internal/logger"
-	"github.com/YReshetko/go-annotation/internal/module"
-	"github.com/YReshetko/go-annotation/internal/utils"
-	. "github.com/YReshetko/go-annotation/internal/utils/stream"
+	ast2 "github.com/bincooo/go-annotation/internal/ast"
+	"github.com/bincooo/go-annotation/internal/logger"
+	"github.com/bincooo/go-annotation/internal/module"
+	"github.com/bincooo/go-annotation/internal/utils"
 )
 
 func FindImportByAlias(m module.Module, file *ast.File, alias string) (string, bool) {
@@ -37,7 +36,7 @@ func getLocalPackageName(m module.Module, spec *ast.ImportSpec) string {
 		return importPath
 	}
 
-	//logger.Debugf("module is found for %s", importPath)
+	// logger.Debugf("module is found for %s", importPath)
 
 	if m != nil {
 		filesInPackage := module.FilesInPackage(m, importPath)
@@ -46,7 +45,7 @@ func getLocalPackageName(m module.Module, spec *ast.ImportSpec) string {
 			Filter(containsFile(filesInPackage)).
 			Map(fileToPackageName(m.Root())).
 			One()
-		//logger.Debugf("module is found for %s, checking %s", importPath, imp)
+		// logger.Debugf("module is found for %s, checking %s", importPath, imp)
 		if strings.HasSuffix(imp, "_test") {
 			imp = imp[:strings.Index(imp, "_test")]
 		}

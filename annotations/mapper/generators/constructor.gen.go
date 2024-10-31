@@ -7,10 +7,10 @@
 package generators
 
 import (
-	cache2 "github.com/YReshetko/go-annotation/annotations/mapper/generators/cache"
-	nodes "github.com/YReshetko/go-annotation/annotations/mapper/generators/nodes"
-	utils "github.com/YReshetko/go-annotation/annotations/mapper/utils"
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	cache2 "github.com/bincooo/go-annotation/annotations/mapper/generators/cache"
+	nodes "github.com/bincooo/go-annotation/annotations/mapper/generators/nodes"
+	utils "github.com/bincooo/go-annotation/annotations/mapper/utils"
+	annotation "github.com/bincooo/go-annotation/pkg"
 	ast "go/ast"
 )
 

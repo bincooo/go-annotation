@@ -2,7 +2,7 @@ package annotations
 
 import (
 	"fmt"
-	"github.com/YReshetko/go-annotation/annotations/mapper/templates"
+	"github.com/bincooo/go-annotation/annotations/mapper/templates"
 )
 
 type Mapper struct {

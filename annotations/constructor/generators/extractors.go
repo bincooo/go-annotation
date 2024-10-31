@@ -8,8 +8,8 @@ import (
 	"go/token"
 	"strings"
 
-	"github.com/YReshetko/go-annotation/annotations/constructor/annotations"
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	"github.com/bincooo/go-annotation/annotations/constructor/annotations"
+	annotation "github.com/bincooo/go-annotation/pkg"
 )
 
 type arguments struct {

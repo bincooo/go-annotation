@@ -2,8 +2,8 @@ package mapper
 
 import (
 	"fmt"
-	"github.com/YReshetko/go-annotation/annotations/mapper/annotations"
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	"github.com/bincooo/go-annotation/annotations/mapper/annotations"
+	annotation "github.com/bincooo/go-annotation/pkg"
 	"go/ast"
 )
 

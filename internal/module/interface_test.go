@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/YReshetko/go-annotation/internal/module"
+	"github.com/bincooo/go-annotation/internal/module"
 )
 
 const root = "../../"
@@ -88,31 +88,31 @@ func TestFilesInPackage(t *testing.T) {
 	m, err := module.Load(root)
 	require.NoError(t, err)
 
-	files := module.FilesInPackage(m, "github.com/YReshetko/go-annotation/internal/module")
+	files := module.FilesInPackage(m, "github.com/bincooo/go-annotation/internal/module")
 	require.Len(t, files, 5)
 
-	assert.Contains(t, files, "github.com/YReshetko/go-annotation/internal/module/load.go")
-	assert.Contains(t, files, "github.com/YReshetko/go-annotation/internal/module/interface.go")
-	assert.Contains(t, files, "github.com/YReshetko/go-annotation/internal/module/interface_test.go")
-	assert.Contains(t, files, "github.com/YReshetko/go-annotation/internal/module/lookup.go")
-	assert.Contains(t, files, "github.com/YReshetko/go-annotation/internal/module/module.go")
+	assert.Contains(t, files, "github.com/bincooo/go-annotation/internal/module/load.go")
+	assert.Contains(t, files, "github.com/bincooo/go-annotation/internal/module/interface.go")
+	assert.Contains(t, files, "github.com/bincooo/go-annotation/internal/module/interface_test.go")
+	assert.Contains(t, files, "github.com/bincooo/go-annotation/internal/module/lookup.go")
+	assert.Contains(t, files, "github.com/bincooo/go-annotation/internal/module/module.go")
 }
 
 func TestAbsolutePath(t *testing.T) {
 	m, err := module.Load(root)
 	require.NoError(t, err)
 
-	s, ok := module.AbsolutePath(m, "github.com/YReshetko/go-annotation/internal/module/module.go")
+	s, ok := module.AbsolutePath(m, "github.com/bincooo/go-annotation/internal/module/module.go")
 	require.True(t, ok)
 
-	assert.Contains(t, s, "/src/github.com/YReshetko/go-annotation/internal/module/module.go")
+	assert.Contains(t, s, "/src/github.com/bincooo/go-annotation/internal/module/module.go")
 }
 
 func TestAbsolutePath_NotFound(t *testing.T) {
 	m, err := module.Load(root)
 	require.NoError(t, err)
 
-	s, ok := module.AbsolutePath(m, "github.com/YReshetko/go-annotation/internal/module/unexpected.go")
+	s, ok := module.AbsolutePath(m, "github.com/bincooo/go-annotation/internal/module/unexpected.go")
 	require.False(t, ok)
 	assert.Empty(t, s)
 }

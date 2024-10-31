@@ -1,6 +1,6 @@
 package generators
 
-import "github.com/YReshetko/go-annotation/annotations/constructor/templates"
+import "github.com/bincooo/go-annotation/annotations/constructor/templates"
 
 type FileValues struct {
 	PackageName string

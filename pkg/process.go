@@ -5,13 +5,13 @@ import (
 	goAST "go/ast"
 	"path/filepath"
 
-	"github.com/YReshetko/go-annotation/internal/ast"
-	"github.com/YReshetko/go-annotation/internal/environment"
-	"github.com/YReshetko/go-annotation/internal/module"
-	"github.com/YReshetko/go-annotation/internal/output"
-	"github.com/YReshetko/go-annotation/internal/parser"
-	"github.com/YReshetko/go-annotation/internal/tag"
-	. "github.com/YReshetko/go-annotation/internal/utils/stream"
+	"github.com/bincooo/go-annotation/internal/ast"
+	"github.com/bincooo/go-annotation/internal/environment"
+	"github.com/bincooo/go-annotation/internal/module"
+	"github.com/bincooo/go-annotation/internal/output"
+	"github.com/bincooo/go-annotation/internal/parser"
+	"github.com/bincooo/go-annotation/internal/tag"
+	. "github.com/bincooo/go-annotation/internal/utils/stream"
 )
 
 // Process is entry point for parsing project annotations

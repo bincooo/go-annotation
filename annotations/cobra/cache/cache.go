@@ -7,8 +7,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/YReshetko/go-annotation/annotations/cobra/annotations"
-	"github.com/YReshetko/go-annotation/annotations/cobra/templates"
+	"github.com/bincooo/go-annotation/annotations/cobra/annotations"
+	"github.com/bincooo/go-annotation/annotations/cobra/templates"
 )
 
 type key struct {
@@ -212,7 +212,7 @@ func (c *Cache) GetInitCommands() (map[buildTagName]templates.InitCommands, erro
 		}
 	}
 
-	//printJson(builds)
+	// printJson(builds)
 	return out, nil
 }
 

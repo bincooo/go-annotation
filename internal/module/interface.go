@@ -3,11 +3,9 @@ package module
 import (
 	"errors"
 	"fmt"
-	"github.com/YReshetko/go-annotation/internal/logger"
+	"github.com/bincooo/go-annotation/internal/logger"
 	"path/filepath"
 	"strings"
-
-	. "github.com/YReshetko/go-annotation/internal/utils/stream"
 )
 
 type Module interface {
@@ -45,16 +43,16 @@ func Find(m Module, importPath string) (Module, error) {
 
 // FilesInPackage finds all files in importPath for Module
 // For example:
-// Module.Root - /home/<some-home>/go/src/github.com/YReshetko/go-annotation
+// Module.Root - /home/<some-home>/go/src/github.com/bincooo/go-annotation
 // Module.Files - [internal/module/lookup.go...]
-// importPath - github.com/YReshetko/go-annotation/internal/module
+// importPath - github.com/bincooo/go-annotation/internal/module
 // Then the function returns all files in internal/module dir with package prefix:
 //
-//	"github.com/YReshetko/go-annotation/internal/module/load.go"
-//	"github.com/YReshetko/go-annotation/internal/module/interface.go"
-//	"github.com/YReshetko/go-annotation/internal/module/interface_test.go"
-//	"github.com/YReshetko/go-annotation/internal/module/lookup.go"
-//	"github.com/YReshetko/go-annotation/internal/module/module.go"
+//	"github.com/bincooo/go-annotation/internal/module/load.go"
+//	"github.com/bincooo/go-annotation/internal/module/interface.go"
+//	"github.com/bincooo/go-annotation/internal/module/interface_test.go"
+//	"github.com/bincooo/go-annotation/internal/module/lookup.go"
+//	"github.com/bincooo/go-annotation/internal/module/module.go"
 func FilesInPackage(m Module, importPath string) []string {
 	if m == nil {
 		return nil
@@ -73,7 +71,7 @@ func FilesInPackage(m Module, importPath string) []string {
 			Filter(isPotentialImport(importPath)).
 			Map(joinPath(m.Root())).
 			ToSlice()
-		//logger.Debugf("found files in cached module: %v", files)
+		// logger.Debugf("found files in cached module: %v", files)
 		return files
 	}
 	return OfSlice(m.Files()).
@@ -87,7 +85,7 @@ func FilesInPackage(m Module, importPath string) []string {
 
 // FilesInDir finds all files in a particular directory for Module
 // For example:
-// Module.Root - /home/<some-home>/go/src/github.com/YReshetko/go-annotation
+// Module.Root - /home/<some-home>/go/src/github.com/bincooo/go-annotation
 // Module.Files - [internal/lookup/imports.go...]
 // dir - internal/lookup
 // Then the function returns all files in internal/lookup dir with no prefixes:
@@ -108,10 +106,10 @@ func FilesInDir(m Module, dir string) []string {
 
 // AbsolutePath checks if filePath exists in module and provides absolute path to the file
 // For example:
-// Module.Root - /home/<some-home>/go/src/github.com/YReshetko/go-annotation
+// Module.Root - /home/<some-home>/go/src/github.com/bincooo/go-annotation
 // Module.Files - [internal/module/lookup.go...]
-// filePath - github.com/YReshetko/go-annotation/internal/module/module.go
-// return - /home/<some-home>/go/src/github.com/YReshetko/go-annotation/internal/module/module.go
+// filePath - github.com/bincooo/go-annotation/internal/module/module.go
+// return - /home/<some-home>/go/src/github.com/bincooo/go-annotation/internal/module/module.go
 func AbsolutePath(m Module, filePath string) (string, bool) {
 	filePath = filepath.Clean(filePath)
 	path := OfSlice(m.Files()).

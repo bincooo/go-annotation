@@ -1,7 +1,7 @@
 package templates_test
 
 import (
-	"github.com/YReshetko/go-annotation/annotations/cobra/templates"
+	"github.com/bincooo/go-annotation/annotations/cobra/templates"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"os"

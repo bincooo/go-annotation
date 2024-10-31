@@ -7,9 +7,9 @@
 package generators
 
 import (
-	annotations "github.com/YReshetko/go-annotation/annotations/validator/annotations"
-	model "github.com/YReshetko/go-annotation/annotations/validator/model"
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	annotations "github.com/bincooo/go-annotation/annotations/validator/annotations"
+	model "github.com/bincooo/go-annotation/annotations/validator/model"
+	annotation "github.com/bincooo/go-annotation/pkg"
 	ast "go/ast"
 )
 

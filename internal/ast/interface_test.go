@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/YReshetko/go-annotation/internal/ast"
+	"github.com/bincooo/go-annotation/internal/ast"
 )
 
 func TestNodeSearch(t *testing.T) {

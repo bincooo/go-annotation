@@ -1,7 +1,7 @@
 package annotations
 
 import (
-	"github.com/YReshetko/go-annotation/annotations/constructor/templates"
+	"github.com/bincooo/go-annotation/annotations/constructor/templates"
 	"strings"
 )
 

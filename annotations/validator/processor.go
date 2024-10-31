@@ -3,9 +3,9 @@ package validator
 import (
 	"errors"
 	"fmt"
-	"github.com/YReshetko/go-annotation/annotations/validator/annotations"
-	"github.com/YReshetko/go-annotation/annotations/validator/generators"
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	"github.com/bincooo/go-annotation/annotations/validator/annotations"
+	"github.com/bincooo/go-annotation/annotations/validator/generators"
+	annotation "github.com/bincooo/go-annotation/pkg"
 	"go/ast"
 	"path/filepath"
 )

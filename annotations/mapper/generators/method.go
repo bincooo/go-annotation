@@ -3,14 +3,14 @@ package generators
 import (
 	"bytes"
 	"fmt"
-	cache2 "github.com/YReshetko/go-annotation/annotations/mapper/generators/cache"
-	"github.com/YReshetko/go-annotation/annotations/mapper/generators/nodes"
-	"github.com/YReshetko/go-annotation/annotations/mapper/templates"
-	"github.com/YReshetko/go-annotation/annotations/mapper/utils"
+	cache2 "github.com/bincooo/go-annotation/annotations/mapper/generators/cache"
+	"github.com/bincooo/go-annotation/annotations/mapper/generators/nodes"
+	"github.com/bincooo/go-annotation/annotations/mapper/templates"
+	"github.com/bincooo/go-annotation/annotations/mapper/utils"
 	"go/ast"
 	"strings"
 
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	annotation "github.com/bincooo/go-annotation/pkg"
 )
 
 // @Builder(constructor="newMethodGeneratorBuilder", build="set{{ .FieldName }}", terminator="build", type="pointer", exported="false")
@@ -32,11 +32,11 @@ func (mg *methodGenerator) buildOutput() {
 		builder := nodes.NewFieldBuilder().ImpCache(mg.impCache).Node(mg.node).AstExpr(field.Type)
 		if len(field.Names) == 0 {
 			mg.outputFields = append(mg.outputFields, builder.Name(fmt.Sprintf("out%d", i)).Build())
-			//mg.outputGenerator = append(mg.outputGenerator, buildRootFieldGenerator(field, "", mg.node))
+			// mg.outputGenerator = append(mg.outputGenerator, buildRootFieldGenerator(field, "", mg.node))
 		} else {
 			for _, name := range field.Names {
 				mg.outputFields = append(mg.outputFields, builder.Name(name.String()).Build())
-				//mg.outputGenerator = append(mg.outputGenerator, buildRootFieldGenerator(field, name.String(), mg.node))
+				// mg.outputGenerator = append(mg.outputGenerator, buildRootFieldGenerator(field, name.String(), mg.node))
 			}
 		}
 	}
@@ -48,11 +48,11 @@ func (mg *methodGenerator) buildInput() {
 		builder := nodes.NewFieldBuilder().ImpCache(mg.impCache).Node(mg.node).AstExpr(field.Type)
 		if len(field.Names) == 0 {
 			mg.inputFields = append(mg.inputFields, builder.Name(fmt.Sprintf("in%d", i)).Build())
-			//mg.inputGenerators = append(mg.inputGenerators, buildRootFieldGenerator(field, fmt.Sprintf("in%d", i), mg.node))
+			// mg.inputGenerators = append(mg.inputGenerators, buildRootFieldGenerator(field, fmt.Sprintf("in%d", i), mg.node))
 		} else {
 			for _, name := range field.Names {
 				mg.inputFields = append(mg.inputFields, builder.Name(name.String()).Build())
-				//mg.inputGenerators = append(mg.inputGenerators, buildRootFieldGenerator(field, name.String(), mg.node))
+				// mg.inputGenerators = append(mg.inputGenerators, buildRootFieldGenerator(field, name.String(), mg.node))
 			}
 		}
 	}
@@ -109,7 +109,7 @@ func (mg *methodGenerator) generate(receiverName string) ([]byte, error) {
 		"MethodName":      mg.name,
 		"Arguments":       strings.Join(inArgs, ", "),
 		"ReturnTypes":     outLine,
-		"Block":           string(data), //buffer.String(),
+		"Block":           string(data), // buffer.String(),
 		"ReturnVariables": strings.Join(retVars, ", "),
 	})
 }

@@ -1,7 +1,7 @@
 package annotation
 
 import (
-	"github.com/YReshetko/go-annotation/internal/module"
+	"github.com/bincooo/go-annotation/internal/module"
 	ast2 "go/ast"
 )
 

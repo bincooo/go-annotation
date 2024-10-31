@@ -3,10 +3,10 @@ package nodes
 import (
 	"errors"
 	"fmt"
-	"github.com/YReshetko/go-annotation/annotations/mapper/generators/cache"
+	"github.com/bincooo/go-annotation/annotations/mapper/generators/cache"
 	"go/ast"
 
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	annotation "github.com/bincooo/go-annotation/pkg"
 )
 
 // @Builder(type="pointer")
@@ -123,7 +123,7 @@ func newType(astExpr ast.Expr, node annotation.Node, impCache *cache.ImportCache
 			Build()
 	default:
 		fmt.Printf("unsupported field type: %T\n", expr)
-		//ast.Print(token.NewFileSet(), expr)
+		// ast.Print(token.NewFileSet(), expr)
 	}
 	return nil
 }
@@ -133,7 +133,7 @@ func newTypeByIdent(ident *ast.Ident, node annotation.Node, alias string, isPoin
 		// TODO support embedded structures and declared in the same file
 		if ident.Obj.Kind != ast.Typ {
 			fmt.Println("TODO: unsupported object declaration:", ident.Obj.Kind)
-			//ast.Print(token.NewFileSet(), ident.Obj)
+			// ast.Print(token.NewFileSet(), ident.Obj)
 			return nil
 		}
 		astNode, ok := ident.Obj.Decl.(ast.Node)
@@ -189,11 +189,11 @@ func newNonPrimitiveType(astNode ast.Node, node annotation.Node, isPointer bool,
 				Build()
 		default:
 			fmt.Printf("unsupported internal loaded type %T\n", nnt.Type)
-			//ast.Print(token.NewFileSet(), astNode)
+			// ast.Print(token.NewFileSet(), astNode)
 		}
 	default:
 		fmt.Printf("unsupported internal type %T\n", astNode)
-		//ast.Print(token.NewFileSet(), astNode)
+		// ast.Print(token.NewFileSet(), astNode)
 	}
 	return nil
 }

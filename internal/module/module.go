@@ -1,15 +1,15 @@
 package module
 
 import (
-	"github.com/YReshetko/go-annotation/internal/environment"
-	"github.com/YReshetko/go-annotation/internal/logger"
-	"github.com/YReshetko/go-annotation/internal/utils/imports"
+	"github.com/bincooo/go-annotation/internal/environment"
+	"github.com/bincooo/go-annotation/internal/logger"
+	"github.com/bincooo/go-annotation/internal/utils/imports"
 	"strings"
 
 	"golang.org/x/mod/modfile"
 	module2 "golang.org/x/mod/module"
 
-	. "github.com/YReshetko/go-annotation/internal/utils/stream"
+	. "github.com/bincooo/go-annotation/internal/utils/stream"
 )
 
 type module struct {
@@ -75,9 +75,9 @@ func (m *module) subModuleRoot(importPath string) string {
 }
 
 // Usecase:
-// m.root: /home/yury/go/src/github.com/YReshetko/go-annotation/examples/constructor
+// m.root: /home/yury/go/src/github.com/bincooo/go-annotation/examples/constructor
 // m.files: /internal/common/common.go, ...
-// importPath: github.com/YReshetko/go-annotation/examples/constructor/internal/common
+// importPath: github.com/bincooo/go-annotation/examples/constructor/internal/common
 // result - true as m.root + m.files[i] contains importPath
 func (m *module) hasImportPath(importPath string) bool {
 	path := OfSlice(m.files).

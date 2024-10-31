@@ -1,9 +1,9 @@
 package generators
 
 import (
-	"github.com/YReshetko/go-annotation/annotations/validator/annotations"
-	"github.com/YReshetko/go-annotation/annotations/validator/model"
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	"github.com/bincooo/go-annotation/annotations/validator/annotations"
+	"github.com/bincooo/go-annotation/annotations/validator/model"
+	annotation "github.com/bincooo/go-annotation/pkg"
 	"go/ast"
 	"go/token"
 )
@@ -75,7 +75,7 @@ func (g *Generator) fields(st *ast.StructType, node annotation.Node, checkUnexpo
 }
 
 func (g *Generator) fieldTypeWithValidator(field *ast.Field, node annotation.Node, checkUnexported bool) (string, *model.Validatable) {
-	//ast.Print(token.NewFileSet(), field)
+	// ast.Print(token.NewFileSet(), field)
 	switch expr := field.Type.(type) {
 	case *ast.Ident:
 		name, st, ok := extractStructFromIdent(expr)

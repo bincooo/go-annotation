@@ -1,7 +1,7 @@
 package stream_test
 
 import (
-	"github.com/YReshetko/go-annotation/internal/utils/stream"
+	"github.com/bincooo/go-annotation/internal/utils/stream"
 	"testing"
 )
 

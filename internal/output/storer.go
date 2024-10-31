@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/YReshetko/go-annotation/internal/logger"
+	"github.com/bincooo/go-annotation/internal/logger"
 	"go/ast"
 	gfmt "go/format"
 	"go/printer"
@@ -13,7 +13,7 @@ import (
 	"path/filepath"
 	"text/template"
 
-	"github.com/YReshetko/go-annotation/internal/environment"
+	"github.com/bincooo/go-annotation/internal/environment"
 )
 
 const (

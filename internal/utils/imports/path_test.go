@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/YReshetko/go-annotation/internal/utils/imports"
+	"github.com/bincooo/go-annotation/internal/utils/imports"
 )
 
 func TestOf(t *testing.T) {
@@ -331,10 +331,10 @@ func TestPath_Joins(t *testing.T) {
 			path1:             "github.com\\YReshetko\\go-annotation\\internal\\lookup\\fixtures\\dashed-package",
 			path2:             "C:\\Users\\username\\goworkspace\\go-annotation\\internal\\lookup\\fixtures",
 			expectedLeft:      "github.com/YReshetko",
-			expectedLeftJoin:  "github.com/YReshetko/go-annotation/internal/lookup/fixtures",
+			expectedLeftJoin:  "github.com/bincooo/go-annotation/internal/lookup/fixtures",
 			expectedRight:     "dashed-package",
 			expectedRightJoin: "go-annotation/internal/lookup/fixtures/dashed-package",
-			expectedFullJoin:  "github.com/YReshetko/go-annotation/internal/lookup/fixtures",
+			expectedFullJoin:  "github.com/bincooo/go-annotation/internal/lookup/fixtures",
 		},
 	}
 	for i, testCase := range testCases {

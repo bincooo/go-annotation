@@ -1,12 +1,9 @@
-module github.com/YReshetko/go-annotation
+module github.com/bincooo/go-annotation
 
 go 1.22.0
 
 require (
 	github.com/davecgh/go-spew v1.1.1
-	github.com/eapache/go-resiliency v1.3.0
-	github.com/eapache/queue v1.1.0
-	github.com/google/uuid v1.6.0
 	github.com/gorilla/mux v1.8.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/maxbrunsfeld/counterfeiter/v6 v6.9.0

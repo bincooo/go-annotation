@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/YReshetko/go-annotation/internal/logger"
+	"github.com/bincooo/go-annotation/internal/logger"
 )
 
 type env struct {
@@ -21,11 +21,11 @@ type env struct {
 }
 
 var debug = map[string]logger.Level{
-	"-v": logger.DebugLvl,
-	"-f": logger.FatalLvl,
-	"-i": logger.InfoLvl,
-	"-w": logger.WarnLvl,
-	"-e": logger.ErrorLvl,
+	"v": logger.DebugLvl,
+	"f": logger.FatalLvl,
+	"i": logger.InfoLvl,
+	"w": logger.WarnLvl,
+	"e": logger.ErrorLvl,
 }
 
 func init() {

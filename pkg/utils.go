@@ -4,8 +4,8 @@ import (
 	"go/ast"
 	"go/token"
 
-	"github.com/YReshetko/go-annotation/internal/utils/astutils"
-	. "github.com/YReshetko/go-annotation/internal/utils/stream"
+	"github.com/bincooo/go-annotation/internal/utils/astutils"
+	. "github.com/bincooo/go-annotation/internal/utils/stream"
 )
 
 // FindAnnotations returns all annotation with particular type

@@ -2,9 +2,8 @@ package lookup
 
 import (
 	"fmt"
-	"github.com/YReshetko/go-annotation/internal/ast"
-	"github.com/YReshetko/go-annotation/internal/module"
-	. "github.com/YReshetko/go-annotation/internal/utils/stream"
+	"github.com/bincooo/go-annotation/internal/ast"
+	"github.com/bincooo/go-annotation/internal/module"
 	ast2 "go/ast"
 )
 

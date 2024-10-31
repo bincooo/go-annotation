@@ -6,9 +6,9 @@ import (
 	"go/ast"
 	"path/filepath"
 
-	"github.com/YReshetko/go-annotation/annotations/constructor/annotations"
-	"github.com/YReshetko/go-annotation/annotations/constructor/generators"
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	"github.com/bincooo/go-annotation/annotations/constructor/annotations"
+	"github.com/bincooo/go-annotation/annotations/constructor/generators"
+	annotation "github.com/bincooo/go-annotation/pkg"
 )
 
 func init() {

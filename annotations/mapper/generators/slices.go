@@ -2,7 +2,7 @@ package generators
 
 import (
 	"fmt"
-	"github.com/YReshetko/go-annotation/annotations/mapper/generators/nodes"
+	"github.com/bincooo/go-annotation/annotations/mapper/generators/nodes"
 )
 
 func isEqualSlices(f1, f2 nodes.Type) bool {

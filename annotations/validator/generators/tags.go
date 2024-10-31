@@ -2,7 +2,7 @@ package generators
 
 import (
 	"fmt"
-	"github.com/YReshetko/go-annotation/annotations/validator/model"
+	"github.com/bincooo/go-annotation/annotations/validator/model"
 	"go/ast"
 	"go/token"
 	"regexp"

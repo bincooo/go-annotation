@@ -7,8 +7,8 @@
 package nodes
 
 import (
-	cache "github.com/YReshetko/go-annotation/annotations/mapper/generators/cache"
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	cache "github.com/bincooo/go-annotation/annotations/mapper/generators/cache"
+	annotation "github.com/bincooo/go-annotation/pkg"
 	ast "go/ast"
 )
 

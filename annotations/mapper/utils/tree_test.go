@@ -3,7 +3,7 @@ package utils_test
 import (
 	"bytes"
 	"fmt"
-	"github.com/YReshetko/go-annotation/annotations/mapper/utils"
+	"github.com/bincooo/go-annotation/annotations/mapper/utils"
 	"strings"
 	"testing"
 )

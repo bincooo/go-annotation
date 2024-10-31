@@ -2,11 +2,11 @@ package mapper
 
 import (
 	"fmt"
-	"github.com/YReshetko/go-annotation/annotations/mapper/annotations"
-	"github.com/YReshetko/go-annotation/annotations/mapper/generators"
-	cache2 "github.com/YReshetko/go-annotation/annotations/mapper/generators/cache"
-	"github.com/YReshetko/go-annotation/annotations/mapper/templates"
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	"github.com/bincooo/go-annotation/annotations/mapper/annotations"
+	"github.com/bincooo/go-annotation/annotations/mapper/generators"
+	cache2 "github.com/bincooo/go-annotation/annotations/mapper/generators/cache"
+	"github.com/bincooo/go-annotation/annotations/mapper/templates"
+	annotation "github.com/bincooo/go-annotation/pkg"
 	"go/ast"
 	"path/filepath"
 	"strings"

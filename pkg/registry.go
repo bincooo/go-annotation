@@ -27,10 +27,10 @@ type Meta interface {
 type Lookup interface {
 	// FindImportByAlias returns related import for alias in current ast.File.
 	// For example:
-	// import "github.com/YReshetko/go-annotation/internal/tag"
+	// import "github.com/bincooo/go-annotation/internal/tag"
 	// ...
 	// tag.Parse(...)
-	// FindImportByAlias("tag") returns "github.com/YReshetko/go-annotation/internal/tag", true
+	// FindImportByAlias("tag") returns "github.com/bincooo/go-annotation/internal/tag", true
 	FindImportByAlias(alias string) (string, bool)
 
 	// FindNodeByAlias returns related Node by alias, related import if any and a type/function name from related module

@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/YReshetko/go-annotation/internal/lookup"
-	"github.com/YReshetko/go-annotation/internal/module"
+	"github.com/bincooo/go-annotation/internal/lookup"
+	"github.com/bincooo/go-annotation/internal/module"
 )
 
 var _ Lookup = (*nodeLookup)(nil)

@@ -1,10 +1,10 @@
 package nodes
 
 import (
-	"github.com/YReshetko/go-annotation/annotations/mapper/generators/cache"
+	"github.com/bincooo/go-annotation/annotations/mapper/generators/cache"
 	"go/ast"
 
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	annotation "github.com/bincooo/go-annotation/pkg"
 )
 
 var _ Type = (*PrimitiveType)(nil)

@@ -5,7 +5,7 @@ import (
 	"go/ast"
 	"net/http"
 
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	annotation "github.com/bincooo/go-annotation/pkg"
 )
 
 func init() {

@@ -6,7 +6,7 @@ import (
 
 	"path/filepath"
 
-	"github.com/YReshetko/go-annotation/internal/utils/arrays"
+	"github.com/bincooo/go-annotation/internal/utils/arrays"
 )
 
 type Path string

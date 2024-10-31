@@ -2,8 +2,8 @@ package generators
 
 import (
 	"fmt"
-	"github.com/YReshetko/go-annotation/annotations/mapper/generators/nodes"
-	"github.com/YReshetko/go-annotation/annotations/mapper/templates"
+	"github.com/bincooo/go-annotation/annotations/mapper/generators/nodes"
+	"github.com/bincooo/go-annotation/annotations/mapper/templates"
 )
 
 func isBothPrimitives(f1, f2 nodes.Type) bool {

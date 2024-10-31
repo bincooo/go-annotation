@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/YReshetko/go-annotation/annotations/constructor/generators"
+	"github.com/bincooo/go-annotation/annotations/constructor/generators"
 )
 
 type key struct {

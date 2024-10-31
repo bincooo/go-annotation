@@ -4,7 +4,7 @@ import (
 	ast2 "go/ast"
 	"path/filepath"
 
-	"github.com/YReshetko/go-annotation/internal/module"
+	"github.com/bincooo/go-annotation/internal/module"
 )
 
 var _ Meta = (*meta)(nil)

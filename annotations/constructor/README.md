@@ -9,8 +9,8 @@ GO 1.18+
 To start using the annotations developer needs to add corresponding annotation processor to the gen tool:
 ```go
 import (
-	_ "github.com/YReshetko/go-annotation/annotations/constructor"
-	"github.com/YReshetko/go-annotation/pkg"
+	_ "github.com/bincooo/go-annotation/annotations/constructor"
+	"github.com/bincooo/go-annotation/pkg"
 )
 
 func main() {

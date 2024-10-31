@@ -6,9 +6,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	ast2 "github.com/YReshetko/go-annotation/internal/ast"
-	"github.com/YReshetko/go-annotation/internal/lookup"
-	"github.com/YReshetko/go-annotation/internal/module"
+	ast2 "github.com/bincooo/go-annotation/internal/ast"
+	"github.com/bincooo/go-annotation/internal/lookup"
+	"github.com/bincooo/go-annotation/internal/module"
 )
 
 func TestFindImportByAlias(t *testing.T) {
@@ -29,7 +29,7 @@ func TestFindImportByAlias(t *testing.T) {
 		{".", "github.com/davecgh/go-spew/spew"},
 		{"_", "github.com/davecgh/go-spew/spew"},
 		{"spew", "github.com/davecgh/go-spew/spew"},
-		{"anythingelse", "github.com/YReshetko/go-annotation/internal/lookup/fixtures/dashed-package"},
+		{"anythingelse", "github.com/bincooo/go-annotation/internal/lookup/fixtures/dashed-package"},
 	}
 
 	for _, s := range toTest {

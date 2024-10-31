@@ -2,7 +2,7 @@ package generators
 
 import (
 	"fmt"
-	"github.com/YReshetko/go-annotation/annotations/mapper/utils"
+	"github.com/bincooo/go-annotation/annotations/mapper/utils"
 )
 
 type importCache interface {

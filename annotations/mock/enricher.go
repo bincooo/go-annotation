@@ -6,7 +6,7 @@ import (
 	"go/ast"
 	"go/printer"
 
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	annotation "github.com/bincooo/go-annotation/pkg"
 )
 
 func enrichMockAnnotation(data []byte) ([]byte, error) {

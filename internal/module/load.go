@@ -10,8 +10,8 @@ import (
 
 	"golang.org/x/mod/modfile"
 
-	"github.com/YReshetko/go-annotation/internal/environment"
-	"github.com/YReshetko/go-annotation/internal/logger"
+	"github.com/bincooo/go-annotation/internal/environment"
+	"github.com/bincooo/go-annotation/internal/logger"
 )
 
 const stdLibKey = "__std__"

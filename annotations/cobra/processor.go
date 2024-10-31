@@ -9,10 +9,10 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/YReshetko/go-annotation/annotations/cobra/annotations"
-	"github.com/YReshetko/go-annotation/annotations/cobra/cache"
-	"github.com/YReshetko/go-annotation/annotations/cobra/templates"
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	"github.com/bincooo/go-annotation/annotations/cobra/annotations"
+	"github.com/bincooo/go-annotation/annotations/cobra/cache"
+	"github.com/bincooo/go-annotation/annotations/cobra/templates"
+	annotation "github.com/bincooo/go-annotation/pkg"
 )
 
 func init() {
@@ -134,7 +134,7 @@ func addCobraCommand(node annotation.Node, cache *cache.Cache) error {
 		cache.AddFlag(node.Meta().LocalPackage(), typeSpec.Name.Name, flag)
 	}
 
-	//ast.Print(token.NewFileSet(), structType)
+	// ast.Print(token.NewFileSet(), structType)
 	return nil
 }
 

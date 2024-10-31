@@ -9,7 +9,7 @@ go-annotation is a [Go programming language](https://golang.org) library to buil
 **Annotation** - in the library scope annotation is a part of go comment that have syntax `@<annotation_name>(<field_name_1>="<field_value_1>, ...")`. 
 For example: `@Rest(method="GET", path="/api/v1/pet")`, fields can be omitted: `@Mock`
 
-**Annotation processor** - is a client code that implements [_**pkg.AnnotationProcessor**_](https://github.com/YReshetko/go-annotation/blob/master/pkg/registry.go#L29) interface which receives parsed annotations along with _**ast.Node**_ metadata. 
+**Annotation processor** - is a client code that implements [_**pkg.AnnotationProcessor**_](https://github.com/bincooo/go-annotation/blob/master/pkg/registry.go#L29) interface which receives parsed annotations along with _**ast.Node**_ metadata. 
 
 # Principals
 Approximate high level processing is shown on schema:
@@ -97,7 +97,7 @@ type SomeAnnotationStructure struct {}
 **processor.go**
 ```go
 import (
-	annotation "github.com/YReshetko/go-annotation/pkg"
+	annotation "github.com/bincooo/go-annotation/pkg"
 )
 
 func init() {
@@ -136,7 +136,7 @@ package main
 
 import (
 	_ "github.com/repo/tool/internal" 
-	"github.com/YReshetko/go-annotation/pkg"
+	"github.com/bincooo/go-annotation/pkg"
 )
 
 func main() {

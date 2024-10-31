@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/YReshetko/go-annotation/internal/utils/arrays"
+	"github.com/bincooo/go-annotation/internal/utils/arrays"
 )
 
 func TestLCS_Integers(t *testing.T) {

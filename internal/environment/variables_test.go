@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/YReshetko/go-annotation/internal/environment"
+	"github.com/bincooo/go-annotation/internal/environment"
 )
 
 func TestGoPath(t *testing.T) {

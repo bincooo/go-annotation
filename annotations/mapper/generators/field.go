@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/YReshetko/go-annotation/annotations/mapper/generators/nodes"
+	"github.com/bincooo/go-annotation/annotations/mapper/generators/nodes"
 )
 
 func generate(to *nodes.Field, in []*nodes.Field, c *cache, o *overloading, imp importCache) error {

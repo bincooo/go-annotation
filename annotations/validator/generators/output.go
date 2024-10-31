@@ -1,8 +1,8 @@
 package generators
 
 import (
-	"github.com/YReshetko/go-annotation/annotations/validator/model"
-	"github.com/YReshetko/go-annotation/annotations/validator/templates"
+	"github.com/bincooo/go-annotation/annotations/validator/model"
+	"github.com/bincooo/go-annotation/annotations/validator/templates"
 	"strings"
 )
 
@@ -13,7 +13,7 @@ type Output struct {
 
 func (o Output) Generate() string {
 	data := model.TemplateData{
-		ValidatorName:  o.v.ValidatorName, //TODO get it from annotation
+		ValidatorName:  o.v.ValidatorName, // TODO get it from annotation
 		TargetTypeName: o.v.Name,
 		Snippets:       fieldsSamples("value", o.v.Fields),
 	}
@@ -27,12 +27,12 @@ func fieldsSamples(prefix string, fields []model.Field) []string {
 	var data []string
 	for _, field := range fields {
 		fName := fieldName(prefix, field.Name)
-		//fmt.Println(field.String())
+		// fmt.Println(field.String())
 		if field.Tag.IsIgnore() {
 			continue
 		}
 
-		//TODO extends types
+		// TODO extends types
 		switch {
 		case isString(field.FType):
 			b, _ := templates.Execute(templates.StringZeroSnippetTpl, map[string]string{"FieldName": fName})
