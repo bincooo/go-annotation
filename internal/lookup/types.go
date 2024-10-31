@@ -5,6 +5,8 @@ import (
 	"github.com/bincooo/go-annotation/internal/ast"
 	"github.com/bincooo/go-annotation/internal/module"
 	ast2 "go/ast"
+
+	. "github.com/bincooo/go-annotation/internal/utils/stream"
 )
 
 // FindTypeByImport search for type/function/method (typeName) that declared in module.Module and located in importPath

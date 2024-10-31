@@ -9,6 +9,8 @@ import (
 	"github.com/bincooo/go-annotation/internal/logger"
 	"github.com/bincooo/go-annotation/internal/module"
 	"github.com/bincooo/go-annotation/internal/utils"
+
+	. "github.com/bincooo/go-annotation/internal/utils/stream"
 )
 
 func FindImportByAlias(m module.Module, file *ast.File, alias string) (string, bool) {
