@@ -28,26 +28,14 @@ var debug = map[string]logger.Level{
 	"e": logger.ErrorLvl,
 }
 
-func init() {
-	enironment = &env{}
-	initArgs()
+func Init(projectRoot, logLv string) {
+	enironment = &env{ProjectRoot: projectRoot}
+	initArgs(logLv)
 	initEnv()
 }
-func initArgs() {
-	if len(os.Args) < 2 {
-		panic("Requires project path to process annotations")
-	}
-	args := make([]string, len(os.Args))
-	for i, v := range os.Args {
-		args[i] = v
-	}
-	enironment.ProjectRoot = args[1]
-
-	for i := 2; i < len(args); i++ {
-		if lvl, ok := debug[args[i]]; ok {
-			logger.LogLevel(lvl)
-			break
-		}
+func initArgs(logLv string) {
+	if lvl, ok := debug[logLv]; ok {
+		logger.LogLevel(lvl)
 	}
 	logger.Debug("app is configured")
 }

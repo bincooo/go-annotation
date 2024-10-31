@@ -15,7 +15,8 @@ import (
 )
 
 // Process is entry point for parsing project annotations
-func Process() {
+func Process(projectRoot, logLv string) {
+	environment.Init(projectRoot, logLv)
 	root := environment.ProjectRoot()
 	m := panicOnError(module.Load(root))
 
