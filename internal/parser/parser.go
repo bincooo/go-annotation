@@ -16,7 +16,7 @@ type parser struct {
 }
 
 func parse(doc string) ([]annotation, error) {
-	if !strings.Contains(doc, "@") {
+	if !strings.Contains(doc, "// @") {
 		return nil, nil
 	}
 
