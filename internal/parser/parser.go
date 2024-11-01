@@ -3,6 +3,7 @@ package parser
 import (
 	"errors"
 	"fmt"
+	"regexp"
 	"strings"
 )
 
@@ -17,6 +18,11 @@ type parser struct {
 
 func parse(doc string) ([]annotation, error) {
 	if !strings.Contains(doc, "@") {
+		return nil, nil
+	}
+
+	c := regexp.MustCompile(`\W*@[A-Z]\w+`)
+	if !c.MatchString(doc) {
 		return nil, nil
 	}
 
