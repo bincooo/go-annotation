@@ -2,7 +2,9 @@ package annotation
 
 import (
 	"fmt"
-	ast2 "go/ast"
+	"github.com/bincooo/go-annotation/internal/ast"
+	goAst "go/ast"
+	"go/token"
 	"path/filepath"
 	"strings"
 
@@ -15,7 +17,11 @@ var _ Lookup = (*nodeLookup)(nil)
 type nodeLookup struct {
 	module   module.Module // module for the explored node and file
 	filePath string        // Absolute file path
-	fileAST  *ast2.File    // ast.File related to path
+	fileAST  *goAst.File   // ast.File related to path
+}
+
+func (*nodeLookup) GetFSet() *token.FileSet {
+	return ast.GlobalFSet()
 }
 
 func (n *nodeLookup) FindImportByAlias(alias string) (string, bool) {

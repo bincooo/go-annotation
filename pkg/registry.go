@@ -2,6 +2,7 @@ package annotation
 
 import (
 	"go/ast"
+	"go/token"
 	"reflect"
 )
 
@@ -36,6 +37,8 @@ type Lookup interface {
 	// FindNodeByAlias returns related Node by alias, related import if any and a type/function name from related module
 	// if alias is empty, then the search will go in current directory of ast.File
 	FindNodeByAlias(alias, nodeName string) (Node, string, error)
+
+	GetFSet() *token.FileSet
 }
 
 type Node interface {
