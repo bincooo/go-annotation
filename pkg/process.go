@@ -1,7 +1,9 @@
 package annotation
 
 import (
+	"errors"
 	"fmt"
+	"github.com/bincooo/go-annotation/internal/logger"
 	goAST "go/ast"
 	"path/filepath"
 
@@ -112,7 +114,12 @@ func annotationsByNode(n goAST.Node) ([]parser.Annotation, bool) {
 		return nil, false
 	}
 
-	a := panicOnError(parser.Parse(c))
+	a, err := parser.Parse(c)
+	if err != nil {
+		logger.Warn(errors.Join(fmt.Errorf("warn comment: \n```\n%s\n```", c), err))
+		return nil, false
+	}
+
 	if len(a) == 0 {
 		return nil, false
 	}
