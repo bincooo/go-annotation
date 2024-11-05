@@ -2,6 +2,7 @@ package lookup
 
 import (
 	"go/ast"
+	"os"
 	"path/filepath"
 	"strings"
 
@@ -11,6 +12,10 @@ import (
 	"github.com/bincooo/go-annotation/internal/utils"
 
 	. "github.com/bincooo/go-annotation/internal/utils/stream"
+)
+
+var (
+	projectDir, _ = os.Getwd()
 )
 
 func FindImportByAlias(m module.Module, file *ast.File, alias string) (string, bool) {
@@ -41,6 +46,16 @@ func getLocalPackageName(m module.Module, spec *ast.ImportSpec) string {
 	// logger.Debugf("module is found for %s", importPath)
 
 	if m != nil {
+		if isDir(projectDir, m.Root()) {
+			mod, err := module.Mod(m)
+			if err != nil {
+				panic(err)
+			}
+			if strings.HasPrefix(importPath, mod.Module.Mod.Path) {
+				importPath = strings.TrimPrefix(importPath, mod.Module.Mod.Path)
+			}
+		}
+
 		filesInPackage := module.FilesInPackage(m, importPath)
 		// TODO review the assamption that the first file is a good for check
 		imp := OfSlice(m.Files()).
@@ -88,4 +103,10 @@ func isCompletePathSuffixMatch(str, suffix string) bool {
 		return true
 	}
 	return prefix[len(prefix)-1] == '/' || prefix[len(prefix)-1] == '\\'
+}
+
+func isDir(src, target string) bool {
+	src, _ = filepath.Abs(src)
+	target, _ = filepath.Abs(target)
+	return strings.HasPrefix(target, src)
 }
