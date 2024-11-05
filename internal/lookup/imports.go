@@ -52,6 +52,13 @@ func getLocalPackageName(m module.Module, spec *ast.ImportSpec) string {
 				panic(err)
 			}
 			if strings.HasPrefix(importPath, mod.Module.Mod.Path) {
+				if importPath == mod.Module.Mod.Path {
+					fast, err := ast2.LoadFileAST(filepath.Join(m.Root(), m.Files()[0]))
+					if err != nil {
+						panic(err)
+					}
+					return fast.Name.Name
+				}
 				importPath = strings.TrimPrefix(importPath, mod.Module.Mod.Path)
 			}
 		}
