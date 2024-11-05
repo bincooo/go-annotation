@@ -82,6 +82,7 @@ func FilesInPackage(m Module, importPath string) []string {
 		files := OfSlice(m.Files()).
 			Filter(isPotentialImport(importPath)).
 			Map(joinPath(m.Root())).
+			Filter(isChildrenImport(importPath, nativeModule)).
 			ToSlice()
 		// logger.Debugf("found files in cached module: %v", files)
 		return files
@@ -93,6 +94,18 @@ func FilesInPackage(m Module, importPath string) []string {
 		Filter(hasNoSubPath()).
 		Map(joinPath(importPath)).
 		ToSlice()
+}
+
+func isChildrenImport(importPath string, nativeModule *module) func(string) bool {
+	children := strings.TrimPrefix(importPath, nativeModule.mod.Module.Mod.Path)
+	return func(file string) bool {
+		if children == "" {
+			return true
+		}
+
+		file = strings.TrimPrefix(file, nativeModule.root)
+		return strings.HasPrefix(file, children)
+	}
 }
 
 // FilesInDir finds all files in a particular directory for Module
