@@ -89,9 +89,10 @@ func FilesInPackage(m Module, importPath string) []string {
 	}
 	return OfSlice(m.Files()).
 		Map(joinPath(m.Root())).
-		Filter(contains(importPath)).
+		// Filter(contains(importPath)).
+		Filter(isChildrenImport(importPath, nativeModule)).
 		Map(trimImportPath(importPath)).
-		Filter(hasNoSubPath()).
+		//  Filter(hasNoSubPath()).
 		Map(joinPath(importPath)).
 		ToSlice()
 }
