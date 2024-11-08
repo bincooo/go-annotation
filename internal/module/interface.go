@@ -44,13 +44,13 @@ func Find(m Module, importPath string) (Module, error) {
 	return out, nil
 }
 
-func Mod(m Module) (*modfile.File, error) {
+func Mod(m Module) *modfile.File {
 	mod, ok := m.(*module)
 	if !ok {
-		return nil, errors.New("can not cast module to required internal type")
+		panic("can not cast module to required internal type")
 	}
 
-	return mod.mod, nil
+	return mod.mod
 }
 
 // FilesInPackage finds all files in importPath for Module

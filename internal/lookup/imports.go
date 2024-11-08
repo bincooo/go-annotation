@@ -4,6 +4,7 @@ import (
 	"go/ast"
 	"os"
 	"path/filepath"
+	"slices"
 	"strings"
 
 	ast2 "github.com/bincooo/go-annotation/internal/ast"
@@ -46,27 +47,28 @@ func getLocalPackageName(m module.Module, spec *ast.ImportSpec) string {
 	// logger.Debugf("module is found for %s", importPath)
 
 	if m != nil {
-		if isDir(projectDir, m.Root()) {
-			mod, err := module.Mod(m)
-			if err != nil {
-				panic(err)
-			}
-			if strings.HasPrefix(importPath, mod.Module.Mod.Path) {
-				if importPath == mod.Module.Mod.Path {
-					fast, err := ast2.LoadFileAST(filepath.Join(m.Root(), m.Files()[0]))
-					if err != nil {
-						panic(err)
-					}
-					return fast.Name.Name
+		mod := module.Mod(m)
+		children := ""
+		if strings.HasPrefix(importPath, mod.Module.Mod.Path) {
+			if importPath == mod.Module.Mod.Path {
+				fast, err := ast2.LoadFileAST(filepath.Join(m.Root(), m.Files()[0]))
+				if err != nil {
+					panic(err)
 				}
-				importPath = strings.TrimPrefix(importPath, mod.Module.Mod.Path)
+				return fast.Name.Name
 			}
+			children = strings.TrimPrefix(importPath, mod.Module.Mod.Path)
+			children = children[1:]
 		}
 
 		filesInPackage := module.FilesInPackage(m, importPath)
 		// TODO review the assamption that the first file is a good for check
-		imp := OfSlice(m.Files()).
+		files := OfSlice(m.Files()).
 			Filter(containsFile(filesInPackage)).
+			Filter(func(file string) bool { return strings.HasPrefix(file, children) }).
+			ToSlice()
+		slices.SortFunc(files, func(file1, file2 string) int { return len(file1) - len(file2) })
+		imp := OfSlice(files).
 			Map(fileToPackageName(m.Root())).
 			One()
 		// logger.Debugf("module is found for %s, checking %s", importPath, imp)
