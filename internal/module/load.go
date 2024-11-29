@@ -1,6 +1,7 @@
 package module
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"io/fs"
@@ -72,6 +73,11 @@ func loadModule(path string) (module, error) {
 		}
 		switch filepath.Ext(info.Name()) {
 		case ".go":
+			fileBytes, _ := os.ReadFile(filePath)
+			if bytes.Contains(fileBytes, []byte("// +build ignore")) {
+				return nil
+			}
+
 			p, err := filepath.Rel(path, filePath)
 			if err != nil {
 				return err
