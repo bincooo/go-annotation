@@ -184,6 +184,9 @@ func hasNoSubPath() func(string) bool {
 func trimImportPath(importPath string) func(string) string {
 	return func(path string) string {
 		ind := strings.Index(path, importPath)
+		if ind == -1 {
+			return path
+		}
 		return path[ind+len(importPath)+1:]
 	}
 }
