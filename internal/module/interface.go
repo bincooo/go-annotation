@@ -104,7 +104,16 @@ func isChildrenImport(importPath string, nativeModule *module) func(string) bool
 			return true
 		}
 
-		file = strings.TrimPrefix(file, nativeModule.root)
+		parent := ""
+		r := nativeModule.root
+		if strings.Contains(r, "@v") {
+			r = strings.Split(r, "@v")[0]
+			parent = strings.Split(r, filepath.Join("pkg", "mod") + string(filepath.Separator))[1]
+			if !strings.HasPrefix(children, parent) {
+				parent = ""
+			}
+		}
+		file = filepath.Join(parent, strings.TrimPrefix(file, nativeModule.root))
 		return strings.HasPrefix(file, children)
 	}
 }
