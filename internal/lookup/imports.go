@@ -59,6 +59,9 @@ func getLocalPackageName(m module.Module, spec *ast.ImportSpec) string {
 			}
 			children = strings.TrimPrefix(importPath, mod.Module.Mod.Path)
 			children = children[1:]
+			if runtime.GOOS == "windows" {
+				children = strings.Join(strings.Split(children, "/"), string(filepath.Separator))
+			}
 		}
 
 		filesInPackage := module.FilesInPackage(m, importPath)
