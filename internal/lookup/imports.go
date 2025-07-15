@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"slices"
 	"strings"
+	"runtime"
 
 	ast2 "github.com/bincooo/go-annotation/internal/ast"
 	"github.com/bincooo/go-annotation/internal/logger"
